@@ -3,6 +3,9 @@
 # dependencies
 node_modules/
 
+# firebase
+firebaseConfig.js
+
 # Expo
 .expo/
 dist/
@@ -36,7 +39,6 @@ yarn-error.*
 # typescript
 *.tsbuildinfo
 
-app-example
 
 # generated native folders
 /ios
