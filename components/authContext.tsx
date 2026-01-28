@@ -1,5 +1,11 @@
 import { supabase } from "@/utils/supabase";
-import React, { createContext, ReactNode, useEffect, useState } from "react";
+import React, {
+  createContext,
+  ReactNode,
+  useContext,
+  useEffect,
+  useState,
+} from "react";
 // Define types.
 type AuthContextType = {
   session: any | null;
@@ -85,3 +91,5 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     </AuthContext.Provider>
   );
 }
+
+export const useAuth = () => useContext(AuthContext);
