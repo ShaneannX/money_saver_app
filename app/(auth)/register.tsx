@@ -8,20 +8,16 @@ export default function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [username, setUsername] = useState("");
-  const [registered, setRegistered] = useState(false);
 
   useEffect(() => {
-    setEmail("");
-    setPassword("");
-    setRegistered(false);
     setUsername("");
+    setPassword("");
   }, []);
+
   const handleLogin = async () => {
     try {
-      console.log("LOGGING IN");
       await signUp(email, password);
 
-      setRegistered(true);
       setEmail("");
       setPassword("");
       setUsername("");
@@ -32,15 +28,7 @@ export default function Login() {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Login</Text>
-      <TextInput
-        style={styles.input}
-        placeholder="Enter Username here"
-        placeholderTextColor="#aaa"
-        value={email}
-        onChangeText={setUsername}
-        autoCapitalize="none"
-      />
+      <Text style={styles.title}>Register Below:</Text>
       <TextInput
         style={styles.input}
         placeholder="Enter Email here"

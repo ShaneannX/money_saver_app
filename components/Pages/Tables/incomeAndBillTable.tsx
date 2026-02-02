@@ -67,9 +67,6 @@ export default function IncomeAndBillTable() {
       }
 
       setIsUpdated(false);
-      // setShowBills(false);
-      // setShowIncome(false);
-      setUpdate(false);
     };
 
     if (user?.id) loadIncome();
@@ -191,7 +188,7 @@ export default function IncomeAndBillTable() {
 const styles = StyleSheet.create({
   toggleContainer: {
     flexDirection: "row",
-    backgroundColor: "#e6e6e6",
+    backgroundColor: "#a5a5a5",
     borderRadius: 10,
     padding: 4,
     marginVertical: 10,
@@ -218,11 +215,13 @@ const styles = StyleSheet.create({
     width: "100%",
     paddingVertical: 8,
     borderBottomWidth: 1,
+    backgroundColor: "#ffffff",
     borderColor: "#ccc",
     alignItems: "center",
   },
   rowText: {
-    paddingRight: 10,
+    paddingRight: 5,
+    width: "auto",
   },
   buttonRow: {
     flexDirection: "row",
@@ -235,10 +234,10 @@ const styles = StyleSheet.create({
     marginHorizontal: 6,
   },
   deleteButton: {
-    backgroundColor: "#e74c3c",
+    backgroundColor: "#b40202c2",
   },
   updateButton: {
-    backgroundColor: "#279eae",
+    backgroundColor: "#2a80b9",
   },
   actionText: {
     color: "white",
@@ -250,7 +249,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 20,
     borderRadius: 8,
     marginTop: 12,
-    width: 220,
+    width: 100,
     alignItems: "center",
   },
   refreshText: {
