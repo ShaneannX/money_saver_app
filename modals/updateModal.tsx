@@ -49,7 +49,7 @@ export default function UpdateMondals({
               style={styles.input}
               value={name}
               onChangeText={setName}
-              placeholder="Enter Income Name"
+              placeholder="Enter Name"
             />
 
             <Text style={styles.label}>Due Date</Text>
