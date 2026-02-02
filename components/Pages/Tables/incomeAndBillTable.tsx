@@ -254,7 +254,7 @@ const styles = StyleSheet.create({
   },
   refreshText: {
     color: "white",
-    fontSize: 16,
+    fontSize: 13,
     fontWeight: "600",
   },
 });
