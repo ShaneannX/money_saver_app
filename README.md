@@ -23,6 +23,7 @@ Installation & Setup:
 
 Clone the repository:
 git clone https://github.com/ShaneannX/money_saver_app
+
 cd money_saver_app
 
 Install dependencies: 
