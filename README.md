@@ -31,6 +31,7 @@ npm install
 Create a .env file in the project root and add:
 
 EXPO_PUBLIC_SUPABASE_URL=REPLACE_ME
+
 EXPO_PUBLIC_SUPABASE_ANON_KEY=REPLACE_ME
 
 ### Getting Started ###
