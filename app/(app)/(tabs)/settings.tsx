@@ -1,7 +1,7 @@
-import { Button } from "@react-navigation/elements";
+// import { Button } from "@react-navigation/elements";
 // import { Button } from "react-native";
 import { useAuth } from "@/components/authContext";
-import { StyleSheet, View } from "react-native";
+import { Button, StyleSheet, View } from "react-native";
 export default function Settings({}) {
   const { signOut } = useAuth();
 
@@ -16,9 +16,7 @@ export default function Settings({}) {
 
   return (
     <View style={styles.container}>
-      <Button style={styles.button} onPressIn={handleSignOut}>
-        Sign Out
-      </Button>
+      <Button title="Logout" onPress={handleSignOut} color="#777777" />
     </View>
   );
 }

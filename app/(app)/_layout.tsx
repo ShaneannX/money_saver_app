@@ -10,5 +10,9 @@ export default function AppLayout() {
     return <Redirect href="/" />; // Default is the landing page
   }
 
-  return <Stack />;
+  return (
+    <Stack>
+      <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
+    </Stack>
+  );
 }
