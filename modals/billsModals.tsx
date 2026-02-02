@@ -32,7 +32,7 @@ export default function IncomeMondals({ open, setOpen }) {
     >
       <View style={styles.overlay}>
         <View style={styles.modalBox}>
-          <Text style={styles.title}>Add your Income below</Text>
+          <Text style={styles.title}>Add Your Bills Below:</Text>
           <View style={styles.container}>
             <Text style={styles.label}>Name</Text>
             <TextInput

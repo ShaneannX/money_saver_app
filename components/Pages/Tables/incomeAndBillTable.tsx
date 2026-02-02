@@ -33,7 +33,8 @@ export default function IncomeAndBillTable() {
   const [update, setUpdate] = useState(false);
   const [rowId, setRowId] = useState("");
   const [open, setOpen] = useState(false);
-
+  const [showRefresh, setShowRefresh] = useState(false);
+  const [refresh, setRefresh] = useState(false);
   const [showIncome, setShowIncome] = useState<boolean | false>(false);
   const [showBills, setShowBills] = useState<boolean | false>(false);
 
@@ -48,6 +49,9 @@ export default function IncomeAndBillTable() {
     setOpen(true);
   };
 
+  const handleRefresh = () => {
+    setRefresh(!refresh);
+  };
   useEffect(() => {
     const loadIncome = async () => {
       const cacheKey = showIncome ? "income_cache" : "bills_cache";
@@ -61,10 +65,15 @@ export default function IncomeAndBillTable() {
       } catch (err) {
         console.log("Error getting data: ", err);
       }
+
+      setIsUpdated(false);
+      // setShowBills(false);
+      // setShowIncome(false);
+      setUpdate(false);
     };
 
     if (user?.id) loadIncome();
-  }, [user?.id, showIncome, showBills, isUpdated, update]);
+  }, [user?.id, showIncome, showBills, isUpdated, update, refresh]);
 
   return (
     <ScrollView contentContainerStyle={{ padding: 0, alignItems: "center" }}>
@@ -74,6 +83,7 @@ export default function IncomeAndBillTable() {
           onPress={() => {
             setShowIncome(true);
             setShowBills(false);
+            setShowRefresh(true);
           }}
         >
           <Text
@@ -88,6 +98,7 @@ export default function IncomeAndBillTable() {
           onPress={() => {
             setShowIncome(false);
             setShowBills(true);
+            setShowRefresh(true);
           }}
         >
           <Text
@@ -167,6 +178,12 @@ export default function IncomeAndBillTable() {
           rowId={rowId}
         />
       )}
+
+      {showRefresh ? (
+        <TouchableOpacity style={styles.refreshButton} onPress={handleRefresh}>
+          <Text style={styles.refreshText}>Refresh</Text>
+        </TouchableOpacity>
+      ) : null}
     </ScrollView>
   );
 }
@@ -221,10 +238,24 @@ const styles = StyleSheet.create({
     backgroundColor: "#e74c3c",
   },
   updateButton: {
-    backgroundColor: "#27ae60",
+    backgroundColor: "#279eae",
   },
   actionText: {
     color: "white",
+    fontWeight: "600",
+  },
+  refreshButton: {
+    backgroundColor: "#27ae60",
+    paddingVertical: 12,
+    paddingHorizontal: 20,
+    borderRadius: 8,
+    marginTop: 12,
+    width: 220,
+    alignItems: "center",
+  },
+  refreshText: {
+    color: "white",
+    fontSize: 16,
     fontWeight: "600",
   },
 });

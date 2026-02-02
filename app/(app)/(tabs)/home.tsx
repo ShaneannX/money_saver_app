@@ -27,7 +27,7 @@ export default function Home() {
     };
 
     loadBills();
-  }, [refresh]);
+  }, [refresh, open]);
 
   const handleRefresh = () => setRefresh(!refresh);
 

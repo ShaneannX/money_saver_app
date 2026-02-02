@@ -42,7 +42,7 @@ export default function UpdateMondals({
     >
       <View style={styles.overlay}>
         <View style={styles.modalBox}>
-          <Text style={styles.title}>Update `${tableName}` below</Text>
+          <Text style={styles.title}>Update {tableName} below</Text>
           <View style={styles.container}>
             <Text style={styles.label}>Name</Text>
             <TextInput
